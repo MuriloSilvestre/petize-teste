@@ -1,0 +1,79 @@
+<div class="content">
+  <div class="header">
+    <h1>Search <span class="destaque">d_evs</span></h1>
+    <form [formGroup]="service.formularioBasico" class="search">
+      <mat-form-field appearance="outline">
+        <mat-label> <mat-icon matSuffix>search</mat-icon> Search</mat-label>
+        <input matInput formControlName="login" (focusout)="BuscarUsuario()" />
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="perfil">
+    <div class="dados">
+      <div class="container-dados">
+        <div class="avatar">
+          <img [src]="perfil.avatar_url" alt="Avatar" />
+          <div class="nome">
+            <h2>{{ perfil.name }}</h2>
+            <h3>@{{ perfil.login }}</h3>
+          </div>
+        </div>
+        <p>{{ perfil.bio }}</p>
+        <span>
+          <img src="./../../../assets/icons/Group, User.svg" />
+          {{ perfil.followers }} Seguidores
+        </span>
+        <span>
+          <img src="./../../../assets/icons/heart.svg" />
+          {{ perfil.following }} Seguindo
+        </span>
+        <span>
+          <img src="./../../../assets/icons/building-office-work-square.svg" />
+          {{ perfil.company }}
+        </span>
+        <span>
+          <img src="./../../../assets/icons/Pin, Location.svg" />
+          {{ perfil.location }}
+        </span>
+        <span>
+          <img src="./../../../assets/icons/email-mail-style-4-big.svg" />
+          {{ perfil.email }}
+        </span>
+        <a target="_blank" [href]="perfil.blog">
+          <span>
+            <img src="./../../../assets/icons/link-angle-right.svg" />
+            {{ perfil.blog }}
+          </span>
+        </a>
+        <a
+          target="_blank"
+          [href]="'https://twitter.com/' + perfil.twitter_username"
+        >
+          <span>
+            <img src="./../../../assets/icons/Twitter.svg" />
+            {{ perfil.twitter_username }}
+          </span>
+        </a>
+        <a [href]="'mailto:' + perfil.email">
+          <button mat-flat-button color="primary">Contato</button>
+        </a>
+      </div>
+    </div>
+    <div class="repos">
+      <ul>
+        <li *ngFor="let item of repos">
+          <a target="_blank" [href]="item.html_url">
+            <h4>{{ item.name }}</h4>
+          </a>
+          <p>{{ item.description }}</p>
+          <span>
+            <img src="./../../../assets/icons/Path.svg" />
+            {{ item.stargazers_count }}
+            <strong>•</strong> Atualizado há
+            {{ Dias(item.updated_at, data) }} dias
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

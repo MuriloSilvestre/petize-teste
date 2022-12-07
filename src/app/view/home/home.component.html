@@ -1,0 +1,12 @@
+<div class="content">
+  <h1>Search <span class="destaque">d_evs</span></h1>
+  <form [formGroup]="service.formularioBasico" class="search">
+    <mat-form-field appearance="outline">
+      <mat-label> <mat-icon matSuffix>search</mat-icon> Search</mat-label>
+      <input matInput formControlName="login" />
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="BuscarUsuario()">
+      Search
+    </button>
+  </form>
+</div>

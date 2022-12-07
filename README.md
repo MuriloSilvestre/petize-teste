@@ -1,6 +1,6 @@
 # PetizeTeste
 
-Esse projeto foi desenvolvido com [Angular CLI](https://github.com/angular/angular-cli) versão 14.1.3 e [Node.Js] versão 16.17.0.
+Esse projeto foi desenvolvido com [Angular CLI](https://github.com/angular/angular-cli) versão 14.1.3 e Node.Js versão 16.17.0.
 
 ## Instação
 
